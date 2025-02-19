@@ -39,7 +39,7 @@ const RequestPage = () => {
         };
         console.log('Request submitted:',  requestData );
         try {
-            const response = await axios.post('bloodbankbackend.netlify.app/api/blood-requirer', requestData);
+            const response = await axios.post('https://blood-bank-donor-management-system.onrender.com/api/blood-requirer', requestData);
             console.log('Request submitted:', response.data);
             navigate('/'); // Redirect to home or list page after success
         } catch (error) {

@@ -9,7 +9,7 @@ const DonorList = () => {
     useEffect(() => {
         const fetchDonors = async () => {
             try {
-                const response = await axios.get("bloodbankbackend.netlify.app/api/donors");
+                const response = await axios.get("https://blood-bank-donor-management-system.onrender.com/api/donors");
                 setDonors(response.data);
             } catch (error) {
                 console.error("Error fetching donors:", error);

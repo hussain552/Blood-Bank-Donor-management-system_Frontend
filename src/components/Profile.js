@@ -15,7 +15,7 @@ const Profile = () => {
         return;
       }
       try {
-        const response = await axios.get("bloodbankbackend.netlify.app/api/profile", {
+        const response = await axios.get("https://blood-bank-donor-management-system.onrender.com/api/profile", {
           params: { emailId: userEmail },
         });
 

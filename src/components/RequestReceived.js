@@ -19,7 +19,7 @@ console.log("localstorge",userEmail)
         const fetchRequests = async () => {
              console.log("Hello this from table")
             try {
-                const response = await axios.get("bloodbankbackend.netlify.app/api/bloodRequirer", {
+                const response = await axios.get("https://blood-bank-donor-management-system.onrender.com/api/bloodRequirer", {
                     params: { EmailId: userEmail }
                 });
                 console.log("Hello this from table",response)

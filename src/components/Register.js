@@ -52,7 +52,7 @@ const Register = () => {
     if (!validateForm()) return;
 
     try {
-      const response = await axios.post("bloodbankbackend.netlify.app/api/auth/signup", formData);
+      const response = await axios.post("https://blood-bank-donor-management-system.onrender.com/api/auth/signup", formData);
       alert("Registration successful! Thank you for becoming a donor.");
       // Reset form after successful submission
       setFormData({

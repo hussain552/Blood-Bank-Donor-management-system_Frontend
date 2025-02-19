@@ -21,7 +21,7 @@ const Login = () => {
     setError("");
 
     try {
-      const response = await axios.post("bloodbankbackend.netlify.app/api/auth/login", formData);
+      const response = await axios.post("https://blood-bank-donor-management-system.onrender.com/api/auth/login", formData);
       console.log("Login successful:", response.data);
       login(formData.emailId);
       navigate("/");
