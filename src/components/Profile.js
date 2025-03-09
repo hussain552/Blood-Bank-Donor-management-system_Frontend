@@ -15,7 +15,7 @@ const Profile = () => {
         return;
       }
       try {
-        const response = await axios.get("https://blood-bank-donor-management-system.onrender.com/api/profile", {
+        const response = await axios.get("http://localhost:8080/api/profile", {
           params: { emailId: userEmail },
         });
 

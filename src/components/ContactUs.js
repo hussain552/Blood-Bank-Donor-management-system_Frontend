@@ -28,7 +28,7 @@ const ContactUs = () => {
     setSuccessMessage('');
 
     try {
-      const response = await axios.post('https://blood-bank-donor-management-system.onrender.com/api/contactQuery', formData);
+      const response = await axios.post('http://localhost:8080/api/contactQuery', formData);
       setSuccessMessage('Your message has been sent successfully!');
       setFormData({
         name: '',

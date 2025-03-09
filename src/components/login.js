@@ -21,7 +21,7 @@ const Login = () => {
     setError("");
 
     try {
-      const response = await axios.post("https://blood-bank-donor-management-system.onrender.com/api/auth/login", formData);
+      const response = await axios.post("http://localhost:8080/api/auth/login", formData);
       console.log("Login successful:", response.data);
       login(formData.emailId);
       navigate("/");
@@ -35,6 +35,10 @@ const Login = () => {
 
   const handleCreateAccount = () => {
     navigate("/registration"); // Navigate to the registration page
+  };
+
+  const handleForgotPassword = () => {
+    navigate("/forgetpassword"); // Navigate to Forgot Password page
   };
 
   return (
@@ -54,6 +58,11 @@ const Login = () => {
           <div className="flex items-center border border-gray-300 rounded-lg p-3">
             <FaLock className="text-gray-500 mr-3" />
             <input type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Password" className="w-full outline-none" required />
+          </div>
+
+          {/* Forgot Password Link */}
+          <div className="text-right">
+            <button onClick={handleForgotPassword} className="text-red-600 font-semibold hover:underline">Forgot Password?</button>
           </div>
 
           <button type="submit" disabled={loading} className="w-full bg-red-600 text-white py-2 rounded-lg">{loading ? "Logging in..." : "Login"}</button>

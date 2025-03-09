@@ -9,7 +9,7 @@ const DonorList = () => {
     useEffect(() => {
         const fetchDonors = async () => {
             try {
-                const response = await axios.get("https://blood-bank-donor-management-system.onrender.com/api/donors");
+                const response = await axios.get("http://localhost:8080/api/donors");
                 setDonors(response.data);
             } catch (error) {
                 console.error("Error fetching donors:", error);

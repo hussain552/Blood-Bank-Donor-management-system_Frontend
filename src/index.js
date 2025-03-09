@@ -14,7 +14,16 @@ import Register from './components/Register';
 import Login from './components/login';
 import RequestReceived from './components/RequestReceived'
 import RequestPage from "./components/RequestPage"
-import Profile from './components/Profile';
+import Profile from './components/Profile'
+import Forgettpassword from './components/ForgetPass'
+import ResetPassword from './components/ResetPass'
+import AdminLogin from './components/Admin/Login';
+import AdminResetPassword from './components/Admin/AdminPassReset';
+import BloodGroupPieChart from './components/Admin/PieChartBloodCount';
+import DonorManagement from './components/Admin/ASdonorList';
+import ContactQueries from './components/Admin/ContactQuery.js';
+import AdminDashboard from './components/Admin/AdminDashbord';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
@@ -31,6 +40,19 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="request-received" element={<RequestReceived/>} />
             <Route path="requestPage" element={<RequestPage/>} />
             <Route path="profile" element={<Profile/>} />
+            <Route path="forgetpassword" element={<Forgettpassword/>} />
+            <Route path="reset-password/:token" element={<ResetPassword />} />
+
+            {/* Admin  */}
+            <Route path="/admin/Dashbord" element={< AdminDashboard />} />
+            <Route path="Admin-reset-password/:token" element={<AdminResetPassword />} />
+            <Route path="/admin" element={<AdminLogin />} />
+            <Route path="/adminBloodGroupPieChart" element={<BloodGroupPieChart  />} />
+            <Route path="/admin/DonorManagement" element={<  DonorManagement/>} />
+            <Route path="/admin/ContactQueries" element={< ContactQueries/>} />
+       
+            
+
           </Route>
         </Routes>
       </Router>

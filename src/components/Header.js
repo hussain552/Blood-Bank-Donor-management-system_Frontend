@@ -84,7 +84,7 @@ const Header = () => {
                   Profile
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item as={NavLink} to="/change-password" className="d-flex align-items-center">
+                <NavDropdown.Item as={NavLink} to="/forgetpassword" className="d-flex align-items-center">
                   <FaLock className="me-2" />
                   Change Password
                 </NavDropdown.Item>
