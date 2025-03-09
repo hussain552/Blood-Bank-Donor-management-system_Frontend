@@ -28,7 +28,7 @@ const ContactUs = () => {
     setSuccessMessage('');
 
     try {
-      const response = await axios.post('http://localhost:8080/api/contactQuery', formData);
+      const response = await axios.post('http://localhost:8080/api/admin/contactquery', formData);
       setSuccessMessage('Your message has been sent successfully!');
       setFormData({
         name: '',
@@ -37,9 +37,16 @@ const ContactUs = () => {
         Message: ''
       });
     } catch (error) {
-      setErrorMessage('Error submitting form. Please try again.');
-      console.error('Contact form error:', error);
-    } finally {
+      if (error.response) {
+        // Backend responded with an error
+        setErrorMessage(error.response.data.error || 'Error submitting form.');
+        console.error('Contact form error:', error.response.data);
+      }
+    else{
+      setErrorMessage( 'Error submitting form.');
+    }
+    }
+      finally {
       setLoading(false);
     }
   };
